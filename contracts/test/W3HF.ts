@@ -70,15 +70,18 @@ describe("W3HF", function () {
             await expect(w3hf.voteForCandidate(candidateId))
                     .to.be.revertedWith("Candidate does not exist.");
         });
-        // it("Should not vote for candidate twice", async function () {
-        //     const { w3hf } = await loadFixture(deploySampleFixture);
-        //     const twitterId = "someId";
-        //     const ipfsCid = ethers.utils.toUtf8Bytes("QmRBkKi1PnthqaBaiZnXML6fH6PNqCFdpcBxGYXoUQfp6z");
+        it("Should not vote for candidate twice", async function () {
+            const { w3hf, acceptanceThreshold, defaultAccount } = await loadFixture(deploySampleFixture);
+            const twitterId = "someId";
+            const ipfsCid = ethers.utils.toUtf8Bytes("QmRBkKi1PnthqaBaiZnXML6fH6PNqCFdpcBxGYXoUQfp6z");
+            const candidateId = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(twitterId));
             
-        //     await w3hf.nominateCandidate(twitterId, ipfsCid); // First time should succeed.
-            
-        //     await expect(w3hf.nominateCandidate(twitterId, ipfsCid))
-        //             .to.be.revertedWith("Candidate exists already.");
-        // });
+            await w3hf.nominateCandidate(twitterId, ipfsCid);
+
+            await w3hf.voteForCandidate(candidateId)
+
+            await expect(w3hf.voteForCandidate(candidateId))
+                    .to.be.revertedWith("Already voted for candidate");
+        });
     });
 });
