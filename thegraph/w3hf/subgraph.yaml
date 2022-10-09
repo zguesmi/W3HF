@@ -1,0 +1,29 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: W3HF
+    network: mumbai
+    source:
+      address: "0xf71682c7Cc551570c61b078e3DB7E02f87a24BAA"
+      abi: W3HF
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - CandidateAccepted
+        - CandidateNominated
+        - VotedForCandidate
+      abis:
+        - name: W3HF
+          file: ./abis/W3HF.json
+      eventHandlers:
+        - event: CandidateAccepted(bytes32)
+          handler: handleCandidateAccepted
+        - event: CandidateNominated(bytes32,string,bytes)
+          handler: handleCandidateNominated
+        - event: VotedForCandidate(bytes32,address)
+          handler: handleVotedForCandidate
+      file: ./src/w-3-hf.ts
