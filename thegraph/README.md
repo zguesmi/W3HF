@@ -19,7 +19,7 @@ npx graph init \
 Output:
 ```
 ✔ Protocol · ethereum
-✔ Subgraph slug · w3hf
+✔ Subgraph name · zguesmi/w3hf
 ✔ Directory to create the subgraph in · w3hf
 ✔ Ethereum network · mumbai
 ✔ Contract address · 0xf71682c7Cc551570c61b078e3DB7E02f87a24BAA
@@ -35,7 +35,7 @@ Output:
 ✔ Generate ABI and schema types with npm run codegen
 ✔ Add another contract? (y/N) · false
 
-Subgraph w3hf created in w3hf
+Subgraph zguesmi/w3hf created in w3hf
 
 Next steps:
 
