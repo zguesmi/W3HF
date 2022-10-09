@@ -1,6 +1,18 @@
 {
-  "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
-    "hardhat": "^2.11.2"
-  }
+    "name": "ethbogota-contracts",
+    "description": "FOSS Hall of Famers",
+    "version": "1.0.0",
+    "directories": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zguesmi/ethbogota-contracts.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+        "hardhat": "^2.11.2"
+    }
 }
