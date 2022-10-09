@@ -1,0 +1,17 @@
+type CandidateAccepted @entity {
+  id: ID!
+  candidateId: Bytes! # bytes32
+}
+
+type CandidateNominated @entity {
+  id: ID!
+  candidateId: Bytes! # bytes32
+  twitterId: String! # string
+  ipfsCid: Bytes! # bytes
+}
+
+type VotedForCandidate @entity {
+  id: ID!
+  candidateId: Bytes! # bytes32
+  voter: Bytes! # address
+}

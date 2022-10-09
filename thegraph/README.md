@@ -7,7 +7,7 @@ npm install --save @graphprotocol/graph-cli
 
 Create subgraph
 ```
-npx graph init \
+$ npx graph init \
         --contract-name W3HF \
         --index-events \
         --product hosted-service \
@@ -15,9 +15,7 @@ npx graph init \
         --abi ../contracts/artifacts/contracts/W3HF.sol/W3HF.json \
         --network mumbai \
         zguesmi/w3hf
-```
-Output:
-```
+
 ✔ Protocol · ethereum
 ✔ Subgraph name · zguesmi/w3hf
 ✔ Directory to create the subgraph in · w3hf
@@ -46,4 +44,16 @@ Next steps:
   3. Run `npm run deploy` to deploy the subgraph.
 
 Make sure to visit the documentation on https://thegraph.com/docs/ for further information.
+```
+
+Authenticate:
+```
+$ npx graph auth --product hosted-service                                                                                                              ✔ 
+✔ Deploy key · ****************************************
+Deploy key set for https://api.thegraph.com/deploy/
+```
+
+Deploy subgraph:
+```
+$ npx graph deploy --product hosted-service zguesmi/w3hf
 ```
