@@ -4,10 +4,10 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ w3hf",
-    "create-local": "graph create --node http://localhost:8020/ w3hf",
-    "remove-local": "graph remove --node http://localhost:8020/ w3hf",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 w3hf",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ zguesmi/w3hf",
+    "create-local": "graph create --node http://localhost:8020/ zguesmi/w3hf",
+    "remove-local": "graph remove --node http://localhost:8020/ zguesmi/w3hf",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 zguesmi/w3hf",
     "test": "graph test"
   },
   "dependencies": {

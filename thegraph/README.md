@@ -10,11 +10,11 @@ Create subgraph
 npx graph init \
         --contract-name W3HF \
         --index-events \
-        --studio \
+        --product hosted-service \
         --from-contract 0xf71682c7Cc551570c61b078e3DB7E02f87a24BAA \
         --abi ../contracts/artifacts/contracts/W3HF.sol/W3HF.json \
         --network mumbai \
-        w3hf
+        zguesmi/w3hf
 ```
 Output:
 ```
