@@ -2,5 +2,5 @@
 
 **ETHGlobal Bogotà Hackathon project.**
 
-W3HF is way to accord recognition and financial help to Web3 & FOSS
-contributors as well as influential figures of the ecosystem.
+W3HF is a platform that provides recognition and financial support to Web3
+and FOSS contributors, as well as influential figures in the ecosystem.

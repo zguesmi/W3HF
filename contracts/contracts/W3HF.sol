@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: GPL
+
 pragma solidity ^0.8.17;
 
 
@@ -41,9 +42,10 @@ contract W3HF {
     }
 
     /**
-     * Add new nominee to the list.
-     * Anyone can do this.
+     * Add new nominee to the list. Anyone can do this.
      * Candidates cannot be nominated twice.
+     * @param _twitterId The Twitter ID of the candidate.
+     * @param _ipfsCid The IPFS CID of the candidate's profile.
      */
     function nominateCandidate(string calldata _twitterId, bytes calldata _ipfsCid) public {
         bytes32 candidateId = keccak256(bytes(_twitterId));
@@ -56,6 +58,7 @@ contract W3HF {
 
     /**
      * Vote for an existing candidate only once.
+     * @param _candidateId The ID of the candidate to accept.
      */
     function voteForCandidate(bytes32 _candidateId) public {
         require(candidateExists(_candidateId), "Candidate does not exist.");
@@ -67,6 +70,8 @@ contract W3HF {
 
     /**
      * Check if candidate exists or not.
+     * @param _candidateId The ID of the candidate to check.
+     * @return bool Returns true if the candidate exists, false otherwise.
      */
     function candidateExists(bytes32 _candidateId) private view returns (bool) {
         return bytes(candidates[_candidateId].twitterId).length != 0;
@@ -74,6 +79,8 @@ contract W3HF {
 
     /**
      * Check if elector voted for candidate or not.
+     * @param _candidateId The ID of the candidate to check.
+     * @return bool Returns true if the elector has voted for the candidate, false otherwise.
      */
     function votedForCandidate(bytes32 _candidateId) private view returns (bool) {
         return votes[_candidateId][msg.sender] == true;

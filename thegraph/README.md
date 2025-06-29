@@ -48,7 +48,7 @@ Make sure to visit the documentation on https://thegraph.com/docs/ for further i
 
 Authenticate:
 ```
-$ npx graph auth --product hosted-service                                                                                                              ✔ 
+$ npx graph auth --product hosted-service                                                                                                              ✔
 ✔ Deploy key · ****************************************
 Deploy key set for https://api.thegraph.com/deploy/
 ```
